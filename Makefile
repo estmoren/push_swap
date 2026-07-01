@@ -1,27 +1,20 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/06/15 12:25:57 by lumacko           #+#    #+#              #
-#    Updated: 2026/06/15 12:25:57 by lumacko          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = push_swap
 
-// SRC =
+SRCS =	\
 
-OBJS = ${SRC:.c=.o}
+helpers.c \
+create_stack.c \
+check_input.c \
+
+OBJS = ${SRCS:.c=.o}
 
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -g
+INCLUDE = -I .
 
-.c.o:
-	${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
+%.O: %.c:
+	${CC} ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 ${NAME}: ${OBJS}
 	${CC} ${CFLAGS} ${INCLUDE} ${OBJS} -o ${NAME}
@@ -31,7 +24,7 @@ all: ${NAME}
 clean:
 	${RM} ${OBJS}
 
-fclean:
+fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
