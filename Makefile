@@ -2,9 +2,10 @@ NAME = push_swap
 
 SRCS =	\
 
-helpers.c \
+// helpers.c \
 create_stack.c \
-check_input.c \
+calc_disorder.c \
+// check_input.c \
 
 OBJS = ${SRCS:.c=.o}
 
