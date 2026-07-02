@@ -54,10 +54,10 @@ void	ft_check_args(char **argv, int start)
 	while (argv[i] != NULL)
 	{
 		if (ft_is_number(argv[i]) == 0)
-			error();
+			error_parseo();
 		nb = ft_atol(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			error();
+			error_parseo();
 		i++;
 	}
 }
@@ -74,7 +74,7 @@ void	ft_check_duplicates(char **argv, int start)
 		while (argv[j] != NULL)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				error();
+				error_parseo();
 			j++;
 		}
 		i++;

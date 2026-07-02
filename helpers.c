@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:48:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/02 11:50:19 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/02 12:01:06 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	error(t_stack_node **a, t_stack_node **b)
 		free_stack(a);
 	if (!b && *b)
 		free_stack(b);
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	error_parseo(void)
+{
 	write(2, "Error\n", 6);
 	exit(1);
 }
