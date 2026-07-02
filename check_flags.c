@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 11:37:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 11:41:27 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/02 14:28:28 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int	ft_parse_flags(char **argv, int *strategy, int *bench)
 		count++;
 	}
 	else if (ft_is_flag(argv[count]))
-		error();
+		error_parseo();
 	return (count);
 }
