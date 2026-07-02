@@ -12,13 +12,40 @@
 
 #include "push_swap.h"
 
-int	find_min(t_stack_node **a)
+static int	find_min(t_stack_node **a)
 {
 	t_stack_node	*node;
 	int				min;
 
 	node = *a;
 	min = node->value;
+	while (node != NULL)
+	{
+		if (node->value < min)
+			min = node->value;
+		node = node->next;
+	}
+	return (min);
+}
 
+static void	min_to_top(t_stack_node **a)
+{
+	int	min;
 
+	min = find_min(a);
+	while ((*a)->value != min)
+		ra(a);
+}
+
+void	simple_sort(t_stack_node **a, t_stack_node **b)
+{
+	if (stack_size(*a) <= 1)
+		return ;
+	while (*a != NULL)
+	{
+		min_to_top(a);
+		pb(a, b);
+	}
+	while (*b != NULL)
+		pa(a, b);
 }

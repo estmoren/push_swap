@@ -24,6 +24,7 @@ int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(int ac, char **av);
 void			get_rank(t_stack_node *sa, int size);
 float	calc_disorder(t_stack_node *stack_a);
+void	simple_sort(t_stack_node **a, t_stack_node **b);
 
 int		ft_parse_flags(char **argv, int *strategy, int *bench);
 void	ft_check_args(char **argv, int start);
