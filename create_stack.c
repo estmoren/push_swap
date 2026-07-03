@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 13:56:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/02 15:34:08 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/03 09:48:19 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	get_rank(t_stack_node *sa, int size)
 	}
 }
 
-t_stack_node	*create_stack(int argc, char **argv)
+t_stack_node	*create_stack( char **argv, int argc)
 {
 	t_stack_node	*sa;
 	long int		num;
