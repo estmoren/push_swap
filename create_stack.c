@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 13:56:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/02 15:34:08 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/02 16:00:36 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,24 +80,21 @@ void	get_rank(t_stack_node *sa, int size)
 			temp = temp->next;
 		}
 		if (max_node)
-			max_node->rank = size;
+			max_node->rank = current_size;
 	}
 }
 
-t_stack_node	*create_stack(int argc, char **argv)
+t_stack_node	*create_stack(char **argv, int start)
 {
 	t_stack_node	*sa;
 	long int		num;
 	int				i;
 
 	sa = NULL;
-	i = 1;
-	while (i < argc)
+	i = start; //start where flags end
+	while (argv[i] != NULL)
 	{
 		num = ft_atol(argv[i]);
-		// aqui entran tus funciones para comprobar el imput
-		if (num < INT_MIN || num > INT_MAX)
-			error (&sa, NULL);
 		add_node_end(&sa, new_node((int)num));
 		i++;
 	}
