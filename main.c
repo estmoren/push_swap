@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:00:00 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/03 09:45:07 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/03 12:17:08 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	int				strategy;
 	int				bench;
 	int				start;
-	int 			size;
+	int				size;
 	t_stack_node	*stack_a;
 	t_stack_node	*stack_b;
 

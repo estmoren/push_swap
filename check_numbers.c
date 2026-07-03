@@ -6,11 +6,17 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:56:56 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/03 11:52:20 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/03 12:16:34 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	error_parseo(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 int	ft_is_number(char	*str)
 {
