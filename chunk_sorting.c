@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/03 09:15:25 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/03 09:17:46 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk_siz
 
 void push_chunks_a(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-
+	
 }
 
 void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b)
