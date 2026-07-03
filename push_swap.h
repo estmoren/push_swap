@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
+/*   Updated: 2026/07/03 12:19:16 by lumacko          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -18,7 +28,6 @@ typedef struct s_stack_node
 	int					rank;
 	struct s_stack_node	*next;
 } 						t_stack_node;
-
 
 int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **av, int ac);

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 13:56:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/03 09:48:19 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/03 12:19:53 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static t_stack_node	*new_node(int parsed_number)
 
 static void	add_node_end(t_stack_node **lst, t_stack_node *new)
 {
-	t_stack_node 	*current_list;
+	t_stack_node	*current_list;
 
 	if (!new)
 		return ;
