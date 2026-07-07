@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:48:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/03 12:16:18 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/07 10:59:25 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	error(t_stack_node **a, t_stack_node **b)
 {
-	if (!a && *a)
+	if (a && *a)
 		free_stack(a);
-	if (!b && *b)
+	if (b && *b)
 		free_stack(b);
 	write(2, "Error\n", 6);
 	exit(1);
@@ -39,7 +39,7 @@ void	free_stack(t_stack_node **lst)
 
 void	ft_putstr(char *s)
 {
-	while (!s)
+	if (!s)
 		return ;
 	while (*s)
 	{
