@@ -11,6 +11,7 @@ main.c \
 push.c \
 reverse_rotate.c \
 rotate.c \
+simple_sort.c \
 swap.c \
 
 OBJS = ${SRCS:.c=.o}

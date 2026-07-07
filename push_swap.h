@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/03 12:19:16 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/07 14:57:45 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ typedef struct s_stack_node
 int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **av, int ac);
 void			get_rank(t_stack_node *sa, int size);
-float	calc_disorder(t_stack_node *stack_a);
-void	simple_sort(t_stack_node **a, t_stack_node **b);
+void			simple_sort(t_stack_node **a, t_stack_node **b);
 double			calc_disorder(t_stack_node *stack_a);
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);
