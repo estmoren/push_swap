@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   check_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estmoren <estmoren@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:56:56 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 12:57:01 by estmoren         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:16:34 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_is_number(char	*str)
+void	error_parseo(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+int	ft_is_number(char	*str)
 {
 	int	i;
 
@@ -32,7 +38,7 @@ static int	ft_is_number(char	*str)
 	return (1);
 }
 
-static	long	ft_atol(char *str)
+long	ft_atol(char *str)
 {
 	int		i;
 	int		sign;

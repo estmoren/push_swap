@@ -27,7 +27,7 @@ static t_stack_node	*new_node(int parsed_number)
 
 static void	add_node_end(t_stack_node **lst, t_stack_node *new)
 {
-	t_stack_node 	*current_list;
+	t_stack_node	*current_list;
 
 	if (!new)
 		return ;

@@ -41,7 +41,7 @@ void	ft_putstr(char *s)
 {
 	if (!s)
 		return ;
-	while(*s)
+	while (*s)
 	{
 		write(1, s, 1);
 		s++;

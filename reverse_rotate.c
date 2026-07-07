@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estmoren <estmoren@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:57:34 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 12:57:39 by estmoren         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:14:49 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void ft_reverse_rotate(t_stack_node **stack)
+static void	ft_reverse_rotate(t_stack_node **stack)
 {
 	t_stack_node	*temp;
 	t_stack_node	*prev;
@@ -20,7 +20,7 @@ static	void ft_reverse_rotate(t_stack_node **stack)
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	prev = *stack;
-	while(prev->next->next != NULL)
+	while (prev->next->next != NULL)
 		prev = prev->next;
 	temp = prev->next;
 	prev->next = NULL;
