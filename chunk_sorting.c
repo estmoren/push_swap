@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/07 11:27:48 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/07 15:00:35 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,6 @@ void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b)
 
 	total_size = stack_size(*stack_a);
 	chunk_size = get_chunk_size(total_size);
-	//Phase 1: group into chunks and push to B
 	push_chunks_b(stack_a, stack_b, chunk_size);
-	// Phase 2: Move back to A
 	push_back_a(stack_a, stack_b);
 }
