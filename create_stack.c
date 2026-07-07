@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 13:56:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/02 11:49:12 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/03 12:19:53 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static t_stack_node	*new_node(int parsed_number)
 
 static void	add_node_end(t_stack_node **lst, t_stack_node *new)
 {
-	t_stack_node 	*current_list;
+	t_stack_node	*current_list;
 
 	if (!new)
 		return ;
@@ -84,7 +84,7 @@ void	get_rank(t_stack_node *sa, int size)
 	}
 }
 
-t_stack_node	*create_stack(int ac, char **av)
+t_stack_node	*create_stack( char **argv, int argc)
 {
 	t_stack_node	*sa;
 	long int		num;
@@ -92,11 +92,9 @@ t_stack_node	*create_stack(int ac, char **av)
 
 	sa = NULL;
 	i = 1;
-	while (i < ac)
+	while (i < argc)
 	{
-		// ignoramos flags para limpieza de numeros
-
-		num = ft_atol(av[i]);
+		num = ft_atol(argv[i]);
 		// aqui entran tus funciones para comprobar el imput
 		if (num < INT_MIN || num > INT_MAX)
 			error (&sa, NULL);
