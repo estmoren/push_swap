@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/03 09:17:46 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/07 10:53:59 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk_siz
 	high_boundary = chunk_size -1;
 	while (*stack_a)
 	{
-		if ((*stack_a)->rank >= low_boundary && (*stack_a) <= high_boundary)
+		if ((*stack_a)->rank >= low_boundary && (*stack_a)->rank <= high_boundary)
 		{
 			pb(stack_a, stack_b);
 			if (stack_size(*stack_b) ==  high_boundary + 1)
@@ -41,10 +41,24 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk_siz
 			ra(stack_a);
 	}
 }
+t_stack_node	*find_max_node(t_stack_node *stack)
+{
+	t_stack_node	*max_node;
 
+	if (!stack)
+		return (NULL);
+	max_node = stack;
+	while (stack)
+	{
+		if (stack->rank > max_node->rank)
+			max_node = stack; // assigning node to node, not just value
+		stack = stack->next;
+	}
+	return (max_node);
+}
 void push_chunks_a(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	
+
 }
 
 void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b)
