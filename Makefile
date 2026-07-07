@@ -6,6 +6,7 @@ calc_disorder.c \
 calc_median.c \
 check_flags. \
 check_numbers.c \
+chunk_sorting_helpers.c \
 chunk_sorting.c \
 create_stack.c \
 helpers.c \

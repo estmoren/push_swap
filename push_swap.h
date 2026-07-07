@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/07 14:57:45 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/07 16:36:49 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ typedef struct s_stack_node
 int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **av, int ac);
 void			get_rank(t_stack_node *sa, int size);
+int				get_chunk_size(int size, int strategy);
 void			simple_sort(t_stack_node **a, t_stack_node **b);
-double			calc_disorder(t_stack_node *stack_a);
+void			sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b, int strategy);
+int				get_node_position(t_stack_node *stack, t_stack_node *target);
+
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);
 int				ft_atoi(const char *nptr);
@@ -41,12 +44,19 @@ long			ft_atol(char *str);
 void			ft_check_args(char **argv, int start);
 void			ft_check_duplicates(char **argv, int start);
 
+t_stack_node	*find_max_node(t_stack_node *stack);
+void			push_chunks_b(t_stack_node **stack_a,t_stack_node **stack_b, int chunk);
+				int	get_last_match(t_stack_node *stack, int low, int high);
+				int	get_first_match(t_stack_node *stack, int low, int high);
+
+
 
 void			ft_putstr(char *s);
 void			free_stack(t_stack_node **lst);
 void			error(t_stack_node **a, t_stack_node **b);
 void			error_parseo(void);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos);
 
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
