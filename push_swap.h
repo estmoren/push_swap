@@ -24,6 +24,9 @@ int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **argv, int start);
 void			get_rank(t_stack_node *sa, int size);
 float			calc_disorder(t_stack_node *stack_a);
+void			sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b);
+int				get_node_position(t_stack_node *stack, t_stack_node *target);
+
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);
 void			ft_check_args(char **argv, int start);

@@ -2,17 +2,18 @@ NAME = push_swap
 
 SRCS =	\
 
-helpers.c \
-create_stack.c \
 calc_disorder.c \
-check_numbers.c \
+calc_median.c \
 check_flags. \
+check_numbers.c \
+chunk_sorting.c \
+create_stack.c \
+helpers.c \
 main.c \
 push.c \
 reverse_rotate.c \
 rotate.c \
 swap.c \
-
 
 OBJS = ${SRCS:.c=.o}
 
