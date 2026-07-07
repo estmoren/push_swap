@@ -32,6 +32,8 @@ typedef struct s_stack_node
 int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **av, int ac);
 void			get_rank(t_stack_node *sa, int size);
+float	calc_disorder(t_stack_node *stack_a);
+void	simple_sort(t_stack_node **a, t_stack_node **b);
 double			calc_disorder(t_stack_node *stack_a);
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);
