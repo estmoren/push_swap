@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 11:37:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 14:28:28 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/08 19:35:09 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 static int	ft_is_flag(char *arg)
 {
 	if (arg[0] == '-' && arg[1] == '-')
-		return (1);
-	return (0);
-}
-
-static int	ft_is_bench(char *arg)
-{
-	if (ft_strncmp(arg, "--bench", 8) == 0)
 		return (1);
 	return (0);
 }
@@ -47,7 +40,7 @@ int	ft_parse_flags(char **argv, int *strategy, int *bench)
 	*bench = 0;
 	*strategy = ADAPTIVE;
 	count = 1;
-	if (ft_is_bench(argv[1]))
+	if (is_bench(argv[1]))
 	{
 		*bench = 1;
 		count = 2;
@@ -64,3 +57,4 @@ int	ft_parse_flags(char **argv, int *strategy, int *bench)
 		error_parseo();
 	return (count);
 }
+

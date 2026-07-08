@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/07 16:36:49 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/08 19:53:46 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,26 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 } 						t_stack_node;
 
+typedef struct s_bench
+{
+	int		enabled;
+	double	disorder;
+	char	*strategy;
+	char	*complexity;
+	int		total;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+}	t_bench;
+
 int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **av, int ac);
 void			get_rank(t_stack_node *sa, int size);
@@ -36,6 +56,12 @@ int				get_chunk_size(int size, int strategy);
 void			simple_sort(t_stack_node **a, t_stack_node **b);
 void			sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b, int strategy);
 int				get_node_position(t_stack_node *stack, t_stack_node *target);
+int				is_bench(char *arg);
+int				has_bench(char **argv);
+void			counting_bench(t_bench *bench, char *op);
+void			creating_bench(t_bench *bench, int enabled);
+void			bench_setup(t_bench *bench, char **argv);
+void			bench_initialization(t_bench *bench);
 
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);

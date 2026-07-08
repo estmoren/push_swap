@@ -6,20 +6,20 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:48:34 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/08 18:24:31 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/08 19:17:16 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	calc_disorder(t_stack_node *stack_a)
+double	calc_disorder(t_stack_node *stack_a)
 {
 	t_stack_node	*current_node;
 	t_stack_node	*next_node;
 	int	mistakes;
 	int pairs;
 
-	current_node = (*stack_a);
+	current_node = stack_a;
 	mistakes = 0;
 	pairs = 0;
 	if (!current_node)
@@ -38,5 +38,5 @@ float	calc_disorder(t_stack_node *stack_a)
 	}
 	if (pairs == 0)
 		return (0.0);
-	return ((float)mistakes / pairs);
+	return ((double)mistakes / pairs);
 }
