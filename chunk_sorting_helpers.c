@@ -12,9 +12,6 @@
 
 #include "push_swap.h"
 
-
-#include "push_swap.h"
-
 int	get_first_match(t_stack_node *stack, int low, int high)
 {
 	int	pos;
