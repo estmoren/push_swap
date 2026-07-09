@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/09 16:17:38 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/09 17:22:43 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,3 @@ void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b, int strategy)
 	push_chunks_b(stack_a, stack_b, chunk_size);
 	push_back_a(stack_a, stack_b);
 }
-
-/*
-cc -Wall -Wextra -Werror main.c check_flags.c check_numbers.c create_stack.c helpers.c calc_median.c chunk_sorting.c chunk_sorting_helpers.c push.c rotate.c reverse_rotate.c simple_sort.c swap.c -o push_swap
-
-~/M1/push-swap % ./push_swap --medium 12 5 8 1 14 3 9 6 11 2 15 4 10 7 13
-309 -772 -949 518 -437 -499 -543 -715 508 -791 385 516 827 116 -822 209 -136 -935 -939 -809 -553 -524 34 232 -946 149 -593 466 330 436 -141 -549 -81 206 -431 657 780 -987 554 650 -674 429 -135 -304 -682 -560 960 563 -311 -811 -222 -802 -265 735 -296 236 -459 652 -912 494 -60 98 -745 992 888 -225 -839 130 -400 698 287 266 813 764 -260 182 -607 442 -858 -907 354 -534 583 -408 -837 751 774 -794 -72 301 708 -253 -667 -242 -273 -571 372 -454 437 918
-
-
-
-*/
