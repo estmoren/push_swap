@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:50:32 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/08 23:53:25 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/09 14:35:30 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	bench_steps(t_bench *bench)
 	bench_print_one("rrr", bench->rrr);
 }
 
-static void	bench_percentage()
+static void	bench_percentage(double ratio)
 {
 	int	whole;
 	int	decimals;
@@ -54,7 +54,7 @@ static void	bench_percentage()
 static void	bench_disorder(t_bench *bench)
 {
 	ft_putstr_fd("[bench] disorder: ", 2);
-	bench_percentage(bench->bench_percentage);
+	bench_percentage(bench->disorder);
 }
 
 void	bench_initialization(t_bench *bench)
