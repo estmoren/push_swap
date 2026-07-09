@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:48:35 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/08 19:49:35 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/09 15:28:09 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	has_bench(char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		if (is_bench_arg(argv[i]))
+		if (is_bench(argv[i]))
 			return (1);
 		i++;
 	}
@@ -47,4 +47,24 @@ void	ft_putstr_fd(char *s, int fd)
 		write (fd, &s[i], 1);
 		i++;
 	}
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	long int	l;
+
+	l = n;
+	if (l < 0)
+	{
+		ft_putchar_fd('-', fd);
+		l *= -1;
+	}
+	if (l > 9)
+		ft_putnbr_fd(l / 10, fd);
+	ft_putchar_fd(l % 10 + '0', fd);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

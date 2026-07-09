@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:50:32 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/09 14:35:30 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/09 15:22:58 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ static void	bench_item(char *name, int value)
 
 static void	bench_steps(t_bench *bench)
 {
-	bench_print_one("sa", bench->sa);
-	bench_print_one("sb", bench->sb);
-	bench_print_one("ss", bench->ss);
-	bench_print_one("pa", bench->pa);
-	bench_print_one("pb", bench->pb);
-	bench_print_one("ra", bench->ra);
-	bench_print_one("rb", bench->rb);
-	bench_print_one("rr", bench->rr);
-	bench_print_one("rra", bench->rra);
-	bench_print_one("rrb", bench->rrb);
-	bench_print_one("rrr", bench->rrr);
+	bench_item("sa", bench->sa);
+	bench_item("sb", bench->sb);
+	bench_item("ss", bench->ss);
+	bench_item("pa", bench->pa);
+	bench_item("pb", bench->pb);
+	bench_item("ra", bench->ra);
+	bench_item("rb", bench->rb);
+	bench_item("rr", bench->rr);
+	bench_item("rra", bench->rra);
+	bench_item("rrb", bench->rrb);
+	bench_item("rrr", bench->rrr);
 }
 
 static void	bench_percentage(double ratio)

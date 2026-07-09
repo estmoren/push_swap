@@ -2,6 +2,9 @@ NAME = push_swap
 
 SRCS =	\
 
+bench_helpers.c \
+bench_text.c \
+bench.c \
 calc_disorder.c \
 calc_median.c \
 check_flags. \

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/08 19:53:46 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/09 15:28:31 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ void			counting_bench(t_bench *bench, char *op);
 void			creating_bench(t_bench *bench, int enabled);
 void			bench_setup(t_bench *bench, char **argv);
 void			bench_initialization(t_bench *bench);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+void			ft_putchar_fd(char c, int fd);
 
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);
