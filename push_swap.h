@@ -33,6 +33,7 @@ int				stack_size(t_stack_node *st);
 t_stack_node	*create_stack(char **av, int ac);
 void			get_rank(t_stack_node *sa, int size);
 double			calc_disorder(t_stack_node *stack_a);
+void			complex_sort(t_stack_node **a, t_stack_node **b);
 
 int				ft_parse_flags(char **argv, int *strategy, int *bench);
 int				ft_atoi(const char *nptr);
