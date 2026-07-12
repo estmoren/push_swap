@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:48:34 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/03 12:13:48 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/08 19:17:16 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ double	calc_disorder(t_stack_node *stack_a)
 {
 	t_stack_node	*current_node;
 	t_stack_node	*next_node;
-	int				mistakes;
-	int				pairs;
+	int	mistakes;
+	int pairs;
 
 	current_node = stack_a;
 	mistakes = 0;
