@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:50:32 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/09 15:22:58 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/13 09:10:47 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	bench_disorder(t_bench *bench)
 	bench_percentage(bench->disorder);
 }
 
-void	bench_initialization(t_bench *bench)
+void	bench_results(t_bench *bench)
 {
 	if (!bench || !bench->enabled)
 		return ;

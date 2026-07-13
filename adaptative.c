@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 14:33:00 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/12 22:31:27 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/13 09:45:29 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	adaptive_sort(t_stack **a, t_stack **b, t_bench *bench)
 
 	if (stack_size(*a) <= 5)
 	{
-		sort_short(a, b);
+		sort_short(a, b, bench);
 		return ;
 	}
 	ratio = disorder_ratio(*a);
 	if (ratio < 0.2)
-		sort_short(a, b);
+		sort_short(a, b, bench);
 	else if (ratio < 0.5)
 	{
 		set_bench(bench, "Adaptive -> Medium", "O(n*sqrt(n))");
@@ -38,6 +38,6 @@ void	adaptive_sort(t_stack **a, t_stack **b, t_bench *bench)
 	else
 	{
 		set_bench(bench, "Adaptive -> Complex", "O(n log n)");
-		radix_sort(a, b, bench);
+		complex_sort(a, b, bench);
 	}
 }

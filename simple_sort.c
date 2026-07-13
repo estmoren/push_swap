@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estmoren <estmoren@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 13:03:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 14:53:25 by estmoren         ###   ########.fr       */
+/*   Updated: 2026/07/13 09:53:56 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ static int	find_min(t_stack_node **a)
 	return (min);
 }
 
-static void	min_to_top(t_stack_node **a)
+static void	min_to_top(t_stack_node **a, t_bench *bench)
 {
 	int	min;
 
 	min = find_min(a);
 	while ((*a)->value != min)
-		ra(a);
+		ra(a, bench);
 }
 
-void	simple_sort(t_stack_node **a, t_stack_node **b)
+void	simple_sort(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	if (stack_size(*a) <= 1)
 		return ;
 	while (*a != NULL)
 	{
 		min_to_top(a);
-		pb(a, b);
+		pb(a, b, bench);
 	}
 	while (*b != NULL)
-		pa(a, b);
+		pa(a, b, bench);
 }

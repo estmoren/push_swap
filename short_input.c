@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 10:26:16 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/12 22:27:42 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/13 09:54:44 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	sort_five(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-void 	sort_short(t_stack_node **a, t_stack_node **b)
+void 	sort_short(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	int	size;
 
@@ -59,11 +59,11 @@ void 	sort_short(t_stack_node **a, t_stack_node **b)
 	else if (size == 2)
 	{
 		if ((*a)->rank > (*a)->next->rank)
-			sa(a);
+			sa(a, bench);
 		return ;
 	}
 	else if (size == 3)
-		sort_three(a);
+		sort_three(a, bench);
 	else
-		sort_five(a, b);
+		sort_five(a, b, bench);
 }
