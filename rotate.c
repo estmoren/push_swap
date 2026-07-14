@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estmoren <estmoren@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:57:46 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 12:57:49 by estmoren         ###   ########.fr       */
+/*   Updated: 2026/07/13 22:30:54 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@ static	void	ft_rotate(t_stack_node **stack)
 	temp->next = NULL;
 }
 
-void	ra(t_stack_node **a)
+void	ra(t_stack_node **a, t_bench *bench)
 {
 	ft_rotate(a);
+	counting_bench(bench, "ra"); //added
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_stack_node **b)
+void	rb(t_stack_node **b, t_bench *bench)
 {
 	ft_rotate(b);
+	counting_bench(bench, "rb"); //added
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_stack_node **a, t_stack_node **b)
+void	rr(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	ft_rotate(a);
 	ft_rotate(b);
+	counting_bench(bench, "rr"); //added
 	write(1, "rr\n", 3);
 }

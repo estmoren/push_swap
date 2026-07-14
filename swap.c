@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estmoren <estmoren@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:57:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/02 12:58:00 by estmoren         ###   ########.fr       */
+/*   Updated: 2026/07/13 22:29:56 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@ static void	ft_swap(t_stack_node **stack)
 	(*stack)->next->rank = temp;
 }
 
-void	sa(t_stack_node **a)
+void	sa(t_stack_node **a, t_bench *bench)
 {
 	ft_swap(a);
+	counting_bench(bench, "sa"); //added
 	write (1, "sa\n", 3);
 }
 
-void	sb(t_stack_node **b)
+void	sb(t_stack_node **b, t_bench *bench)
 {
 	ft_swap(b);
+	counting_bench(bench, "sb"); //added
 	write (1, "sb\n", 3);
 }
 
-void	ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	ft_swap(a);
 	ft_swap(b);
+	counting_bench(bench, "ss"); //added
 	write (1, "ss\n", 3);
 }

@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	int				strategy;
-	int				bench;
+	t_bench			bench;
 	int				start_index;
 	int				size;
 	t_stack_node	*stack_a;

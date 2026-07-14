@@ -44,7 +44,7 @@ int	get_last_match(t_stack_node *stack, int low, int high)
 	return (last_match);
 }
 
-void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos)
+void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos, t_bench *bench)
 {
 	int	a_size;
 
@@ -53,7 +53,7 @@ void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos)
 	{
 		while (top_pos > 0)
 		{
-			ra(stack_a);
+			ra(stack_a, bench);
 			top_pos--;
 		}
 	}
@@ -61,7 +61,7 @@ void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos)
 	{
 		while (bot_pos < a_size)
 		{
-			rra(stack_a);
+			rra(stack_a, bench);
 			bot_pos++;
 		}
 	}

@@ -13,7 +13,7 @@ static int	count_bits(int n)
 	return (count);
 }
 
-void	complex_sort(t_stack_node **a, t_stack_node **b)
+void	complex_sort(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	int	size;
 	int	max_bits;
@@ -29,13 +29,13 @@ void	complex_sort(t_stack_node **a, t_stack_node **b)
 		while (i < size)
 		{
 			if ((((*a)->rank >> bit) & 1) == 0)
-				pb(a, b);
+				pb(a, b, bench);
 			else
-				ra(a);
+				ra(a, bench);
 			i = i + 1;
 		}
 		while (*b != NULL)
-			pa(a, b);
+			pa(a, b, bench);
 		bit = bit + 1;
 	}
 }

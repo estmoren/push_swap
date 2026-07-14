@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 11:37:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/08 19:35:09 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/14 09:18:44 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ static int	ft_get_strategy(char *arg)
 	return (-1);
 }
 
-int	ft_parse_flags(char **argv, int *strategy, int *bench)
+int	ft_parse_flags(char **argv, int *strategy, t_bench *bench)
 {
 	int	count;
 	int	code;
 
-	*bench = 0;
+	creating_bench(bench, 0);
 	*strategy = ADAPTIVE;
 	count = 1;
 	if (is_bench(argv[1]))
 	{
-		*bench = 1;
+		bench->enabled = 1;
 		count = 2;
 	}
 	if (argv[count] == NULL)

@@ -20,13 +20,12 @@ int	get_chunk_size(int size, int strategy)
 		return (18);
 	if (strategy == COMPLEX)
 		return (45);
-
 	if (size <= 100)
 		return (20);
 	return (45);
 }
 
-void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk)
+void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk, t_bench *bench)
 {
 	int	low;
 	int	high;
@@ -39,8 +38,8 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk)
 	while (*stack_a)
 	{
 		top = get_first_match(*stack_a, low, high);
-		rotate_to_top(stack_a, top, get_last_match(*stack_a, low, high));
-		pb(stack_a, stack_b);
+		rotate_to_top(stack_a, top, get_last_match(*stack_a, low, high), bench);
+		pb(stack_a, stack_b, bench);
 		pushed++;
 		if ( pushed == chunk)
 		{
@@ -50,7 +49,7 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk)
 		}
 	}
 }
-void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b)
+void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b, t_bench *bench)
 {
 	t_stack_node	*max_node;
 	int				position;
@@ -64,20 +63,21 @@ void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b)
 		{
 			position = get_node_position(*stack_b, max_node);
 			if (position <= (b_size / 2))
-				rb(stack_b);
+				rb(stack_b, bench);
 			else
-				rrb(stack_b);
+				rrb(stack_b, bench);
 		}
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, bench);
 	}
 }
-void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b, int strategy)
+void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b, int strategy, t_bench *bench)
 {
 	int	total_size;
 	int	chunk_size;
 
 	total_size = stack_size(*stack_a);
 	chunk_size = get_chunk_size(total_size, strategy);
-	push_chunks_b(stack_a, stack_b, chunk_size);
-	push_back_a(stack_a, stack_b);
+	push_chunks_b(stack_a, stack_b, chunk_size, bench);
+	push_back_a(stack_a, stack_b, bench);
 }
+
