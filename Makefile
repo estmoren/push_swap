@@ -2,21 +2,24 @@ NAME = push_swap
 
 SRCS =	\
 
+adaptive.c \
 bench_helpers.c \
 bench_text.c \
 bench.c \
 calc_disorder.c \
 calc_median.c \
-check_flags. \
+check_flags.c \
 check_numbers.c \
 chunk_sorting_helpers.c \
 chunk_sorting.c \
+complex_sort.c \
 create_stack.c \
 helpers.c \
 main.c \
 push.c \
 reverse_rotate.c \
 rotate.c \
+short_input.c \
 simple_sort.c \
 swap.c \
 
