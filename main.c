@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:00:00 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/09 17:22:21 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/14 15:34:28 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 		error_parseo();
 	size = stack_size(stack_a);
 	get_rank(stack_a, size);
-	sort_chunks(&stack_a, &stack_b, strategy);
+	sort_chunks(&stack_a, &stack_b, strategy, &bench);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
