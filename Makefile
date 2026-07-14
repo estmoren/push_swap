@@ -1,7 +1,6 @@
 NAME = push_swap
 
 SRCS =	\
-
 adaptive.c \
 bench_helpers.c \
 bench_text.c \
@@ -30,7 +29,7 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -g
 INCLUDE = -I .
 
-%.O: %.c:
+%.o: %.c
 	${CC} ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 ${NAME}: ${OBJS}

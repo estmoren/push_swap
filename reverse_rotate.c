@@ -38,7 +38,7 @@ void	rra(t_stack_node **a, t_bench *bench)
 void	rrb(t_stack_node **b, t_bench *bench)
 {
 	ft_reverse_rotate(b);
-	counting_bench(bench, "rrr");
+	counting_bench(bench, "rrb");
 	write(1, "rrb\n", 4);
 }
 
