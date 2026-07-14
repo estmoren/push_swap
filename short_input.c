@@ -6,22 +6,22 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 10:26:16 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/13 09:54:44 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/14 09:32:04 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack_node **a)
+void	sort_three(t_stack_node **a, t_bench *bench)
 {
 	while ((*a)->rank != 2)
-		ra(a);
-	ra(a);
+		ra(a, bench);
+	ra(a, bench);
 	if((*a)->rank == 1)
-		sa(a);
+		sa(a, bench);
 }
 
-void	sort_five(t_stack_node **a, t_stack_node **b)
+void	sort_five(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	int i;
 
@@ -30,22 +30,22 @@ void	sort_five(t_stack_node **a, t_stack_node **b)
 	{
 		if((*a)->rank == 0 || (*a)->rank == 1)
 		{
-			pb(b, a);
+			pb(b, a, bench);
 			i++;
 		}
 		else
-			ra(a);
+			ra(a, bench);
 	}
 	while ((*a)->rank != 4)
-		ra(a);
-	ra(a);
+		ra(a, bench);
+	ra(a, bench);
 	if ((*a)->rank == 3)
-		sa(a);
+		sa(a, bench);
 	while (*b)
 	{
 		if ((*b)->rank == 0)
-			rb(b);
-		pa(a,b);
+			rb(b, bench);
+		pa(a,b, bench);
 	}
 }
 

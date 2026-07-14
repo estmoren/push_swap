@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:57:20 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/13 10:03:47 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/13 22:30:24 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ static void	ft_push(t_stack_node **dst, t_stack_node **src)
 void	pa(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	ft_push(a, b);
-	bench_count(bench, "pa");
+	counting_bench(bench, "pa");
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
-	ft_push(b, a);ň
-	bench_count(bench, "pb");
+	ft_push(b, a);
+	counting_bench(bench, "pb");
 	write(1, "pb\n", 3);
 }

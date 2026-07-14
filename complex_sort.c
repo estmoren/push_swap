@@ -31,7 +31,7 @@ void	complex_sort(t_stack_node **a, t_stack_node **b, t_bench *bench)
 			if ((((*a)->rank >> bit) & 1) == 0)
 				pb(a, b, bench);
 			else
-				ra(a);
+				ra(a, bench);
 			i = i + 1;
 		}
 		while (*b != NULL)

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:00:00 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/07 16:00:56 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/14 09:09:42 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	int				strategy;
-	int				bench;
+	t_bench			bench;
 	int				start_index;
 	int				size;
 	t_stack_node	*stack_a;
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 	size = stack_size(stack_a);
 	get_rank(stack_a, size);
 
+	/*
 	// --- START TEMPORARY DEBUGGING BLOCK ---
 	t_stack_node *temp = stack_a;
 	ft_putstr("\n=== DIAGNOSTIC REPORT ===\n");
@@ -73,8 +74,9 @@ int	main(int argc, char **argv)
 	}
 	ft_putstr("=========================\n\n");
 	// --- END TEMPORARY DEBUGGING BLOCK ---
+	*/
 
-	sort_chunks(&stack_a, &stack_b, strategy);
+	sort_chunks(&stack_a, &stack_b, strategy, &bench);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

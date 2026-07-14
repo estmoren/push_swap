@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:57:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/13 09:58:14 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/13 22:29:56 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static void	ft_swap(t_stack_node **stack)
 void	sa(t_stack_node **a, t_bench *bench)
 {
 	ft_swap(a);
-	bench_count(bench, "sa"); //added
+	counting_bench(bench, "sa"); //added
 	write (1, "sa\n", 3);
 }
 
 void	sb(t_stack_node **b, t_bench *bench)
 {
 	ft_swap(b);
-	bench_count(bench, "sb"); //added
+	counting_bench(bench, "sb"); //added
 	write (1, "sb\n", 3);
 }
 
@@ -44,6 +44,6 @@ void	ss(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	ft_swap(a);
 	ft_swap(b);
-	bench_count(bench, "ss"); //added
+	counting_bench(bench, "ss"); //added
 	write (1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/13 09:52:11 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/14 09:11:12 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk, t_
 	while (*stack_a)
 	{
 		top = get_first_match(*stack_a, low, high);
-		rotate_to_top(stack_a, top, bench, get_last_match(*stack_a, low, high));
+		rotate_to_top(stack_a, top, get_last_match(*stack_a, low, high), bench);
 		pb(stack_a, stack_b, bench);
 		pushed++;
 		if ( pushed == chunk)

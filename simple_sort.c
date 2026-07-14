@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 13:03:58 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/13 09:53:56 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/13 22:37:48 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	simple_sort(t_stack_node **a, t_stack_node **b, t_bench *bench)
 		return ;
 	while (*a != NULL)
 	{
-		min_to_top(a);
+		min_to_top(a, bench);
 		pb(a, b, bench);
 	}
 	while (*b != NULL)
