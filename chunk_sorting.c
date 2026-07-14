@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/09 17:22:43 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/14 14:47:55 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk, t_
 		}
 	}
 }
-void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b, t_bench *bench)
+static void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b, t_bench *bench)
 {
 	t_stack_node	*max_node;
 	int				position;
