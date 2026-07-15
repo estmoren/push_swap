@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 13:56:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/02 16:00:36 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 19:48:15 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_stack_node	*create_stack(char **argv, int start)
 	int				i;
 
 	sa = NULL;
-	i = start; //start where flags end
+	i = start;
 	while (argv[i] != NULL)
 	{
 		num = ft_atol(argv[i]);

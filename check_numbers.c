@@ -6,13 +6,13 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:56:56 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/03 12:16:34 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 19:12:21 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_parseo(void)
+void	error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
@@ -72,10 +72,10 @@ void	ft_check_args(char **argv, int start)
 	while (argv[i] != NULL)
 	{
 		if (ft_is_number(argv[i]) == 0)
-			error_parseo();
+			error();
 		nb = ft_atol(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			error_parseo();
+			error();
 		i++;
 	}
 }
@@ -92,7 +92,7 @@ void	ft_check_duplicates(char **argv, int start)
 		while (argv[j] != NULL)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				error_parseo();
+				error();
 			j++;
 		}
 		i++;

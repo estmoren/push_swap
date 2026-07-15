@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   join_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: estmoren <estmoren@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 18:06:45 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/15 18:06:48 by estmoren         ###   ########.fr       */
+/*   Updated: 2026/07/15 19:13:26 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	args_length(char **argv, int start)
 		while (argv[i][j] != '\0')
 			j++;
 		if (j == 0)
-			error_parseo();
+			error();
 		len += j + 1;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/15 17:36:42 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 19:14:15 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int				get_node_position(t_stack_node *stack, t_stack_node *target);
 int				ft_parse_flags(char **argv, int *strategy, t_bench *bench);
 
 /* check numbers */
-void			error_parseo(void);
+void			error(void);
 int				ft_is_number(char *str);
 long			ft_atol(char *str);
 void			ft_check_args(char **argv, int start);
@@ -103,7 +103,7 @@ void			get_rank(t_stack_node *sa, int size);
 t_stack_node	*create_stack(char **av, int ac);
 
 /* helpers */
-void			error(t_stack_node **a, t_stack_node **b);
+void			error_stack(t_stack_node **a, t_stack_node **b);
 void			free_stack(t_stack_node **lst);
 void			ft_putstr(char *s);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);

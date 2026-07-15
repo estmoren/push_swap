@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:00:00 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/15 18:34:38 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 19:17:06 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_a = prepare_stack(argv, start_index);
 	if (!stack_a)
-		error_parseo();
+		error();
 	get_rank(stack_a, stack_size(stack_a));
 	bench.disorder = calc_disorder(stack_a);
 	execute_sort(&stack_a, &stack_b, strategy, &bench);
