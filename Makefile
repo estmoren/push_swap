@@ -41,7 +41,7 @@ all: ${NAME}
 
 clean:
 	${RM} ${OBJS}
-./
+
 fclean: clean
 	${RM} ${NAME}
 

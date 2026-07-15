@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 10:26:16 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/15 17:11:31 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 20:42:02 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,32 @@ void	sort_three(t_stack_node **a, t_bench *bench)
 	ra(a, bench);
 	if((*a)->rank == 1)
 		sa(a, bench);
+}
+
+static void	sort_four(t_stack_node **a, t_stack_node **b, t_bench *bench)
+{
+	int	i;
+
+	i = 0;
+	while (i < 2)
+	{
+		if ((*a)->rank == 0 || (*a)->rank == 1)
+		{
+			pb(a, b, bench);
+			i++;
+		}
+		else
+			ra(a, bench);
+	}
+
+	if((*a)->rank > (*a)->next->rank)
+		sa(a, bench);
+	while(*b)
+	{
+		if((*b)->rank == 0)
+			rb(b, bench);
+		pa(a,b,bench);
+	}
 }
 
 void	sort_five(t_stack_node **a, t_stack_node **b, t_bench *bench)
@@ -64,6 +90,8 @@ void 	sort_short(t_stack_node **a, t_stack_node **b, t_bench *bench)
 	}
 	else if (size == 3)
 		sort_three(a, bench);
+	else if (size == 4)
+		sort_four(a, b, bench);
 	else
 		sort_five(a, b, bench);
 }
