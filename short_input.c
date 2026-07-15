@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 10:26:16 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/14 09:32:04 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 17:11:31 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sort_five(t_stack_node **a, t_stack_node **b, t_bench *bench)
 	{
 		if((*a)->rank == 0 || (*a)->rank == 1)
 		{
-			pb(b, a, bench);
+			pb(a, b, bench);
 			i++;
 		}
 		else

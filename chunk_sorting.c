@@ -6,23 +6,43 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/14 14:47:55 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 17:09:23 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static double	ft_sqrt(double n)
+{
+	double	x;
+	double	prev;
+
+	if (n <= 0)
+		return (0);
+	x = n;
+	prev = 0;
+	while (x != prev)
+	{
+		prev = x;
+		x = 0.5 * (x + n / x);
+	}
+	return (x);
+}
+
 int	get_chunk_size(int size, int strategy)
 {
+	int	chunk;
+
 	if (strategy == SIMPLE)
 		return (2);
 	if (strategy == MEDIUM)
 		return (18);
 	if (strategy == COMPLEX)
 		return (45);
-	if (size <= 100)
-		return (20);
-	return (45);
+	chunk = (int)(1.7 * ft_sqrt((double)size) + 0.5);
+	if (chunk < 1)
+		chunk = 1;
+	return (chunk);
 }
 
 void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk, t_bench *bench)

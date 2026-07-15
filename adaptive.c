@@ -28,9 +28,7 @@ void	adaptive_sort(t_stack_node **a, t_stack_node **b, int strategy, t_bench *be
 		return ;
 	}
 	ratio = calc_disorder(*a);
-	if (ratio < 0.2)
-		sort_short(a, b, bench);
-	else if (ratio < 0.5)
+	if (ratio < 0.5)
 	{
 		set_bench(bench, "Adaptive -> Medium", "O(n*sqrt(n))");
 		sort_chunks(a, b, strategy, bench);
