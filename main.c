@@ -38,6 +38,26 @@ static void    execute_sort(t_stack_node **a, t_stack_node **b,
         sort_chunks(a, b, strategy, bench);
 }
 
+static t_stack_node    *prepare_stack(char **argv, int start)
+{
+    char            *cadena;
+    char            **numeros;
+    t_stack_node    *stack_a;
+
+    cadena = join_args(argv, start);
+    if (!cadena)
+        return (NULL);
+    numeros = ft_split(cadena, ' ');
+    free(cadena);
+    if (!numeros)
+        return (NULL);
+    ft_check_args(numeros, 0);
+    ft_check_duplicates(numeros, 0);
+    stack_a = create_stack(numeros, 0);
+    free_split(numeros);
+    return (stack_a);
+}
+
 int    main(int argc, char **argv)
 {
     t_stack_node    *stack_a;
@@ -52,9 +72,7 @@ int    main(int argc, char **argv)
     start_index = ft_parse_flags(argv, &strategy, &bench);
     if (argv[start_index] == NULL)
         return (0);
-    ft_check_args(argv, start_index);
-    ft_check_duplicates(argv, start_index);
-    stack_a = create_stack(argv, start_index);
+    stack_a = prepare_stack(argv, start_index);
     if (!stack_a)
         error_parseo();
     get_rank(stack_a, stack_size(stack_a));
