@@ -14,12 +14,14 @@ chunk_sorting.c \
 complex_sort.c \
 create_stack.c \
 helpers.c \
+join_args.c \
 main.c \
 push.c \
 reverse_rotate.c \
 rotate.c \
 short_input.c \
 simple_sort.c \
+split.c \
 swap.c \
 
 OBJS = ${SRCS:.c=.o}

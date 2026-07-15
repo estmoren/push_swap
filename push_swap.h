@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/14 14:53:24 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 17:36:42 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,9 @@ void			ft_putstr(char *s);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *nptr);
 
+/* join args */
+char			*join_args(char **argv, int start);
+
 /* main */
 int	main(int argc, char **argv);
 
@@ -131,6 +134,10 @@ void			sort_short(t_stack_node **a, t_stack_node **b, t_bench *bench);
 
 /* simple sort */
 void			simple_sort(t_stack_node **a, t_stack_node **b, t_bench *bench);
+
+/* split */
+char			**ft_split(char *str, char c);
+void			free_split(char **split);
 
 /* swap */
 void			sa(t_stack_node **a, t_bench *bench);
