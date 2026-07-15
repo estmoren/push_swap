@@ -6,79 +6,79 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:00:00 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/15 17:20:57 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/15 18:34:38 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int    is_sorted(t_stack_node *stack)
+static int	is_sorted(t_stack_node *stack)
 {
-    if (!stack)
-        return (1);
-    while (stack->next)
-    {
-        if (stack->value > stack->next->value)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
-static void    execute_sort(t_stack_node **a, t_stack_node **b,
-        int strategy, t_bench *bench)
+static void		execute_sort(t_stack_node **a, t_stack_node **b,
+		int strategy, t_bench *bench)
 {
-    if (is_sorted(*a))
-        return ;
-    if (strategy == ADAPTIVE)
-        adaptive_sort(a, b, strategy, bench);
-    else if (strategy == COMPLEX)
-        complex_sort(a, b, bench);
-    else
-        sort_chunks(a, b, strategy, bench);
+	if (is_sorted(*a))
+		return ;
+	if (strategy == ADAPTIVE)
+		adaptive_sort(a, b, strategy, bench);
+	else if (strategy == COMPLEX)
+		complex_sort(a, b, bench);
+	else
+		sort_chunks(a, b, strategy, bench);
 }
 
-static t_stack_node    *prepare_stack(char **argv, int start)
+static t_stack_node		*prepare_stack(char **argv, int start)
 {
-    char            *cadena;
-    char            **numeros;
-    t_stack_node    *stack_a;
+	char			*string;
+	char			**numbers;
+	t_stack_node	*stack_a;
 
-    cadena = join_args(argv, start);
-    if (!cadena)
-        return (NULL);
-    numeros = ft_split(cadena, ' ');
-    free(cadena);
-    if (!numeros)
-        return (NULL);
-    ft_check_args(numeros, 0);
-    ft_check_duplicates(numeros, 0);
-    stack_a = create_stack(numeros, 0);
-    free_split(numeros);
-    return (stack_a);
+	string = join_args(argv, start);
+	if (!string)
+		return (NULL);
+	numbers = ft_split(string, ' ');
+	free(string);
+	if (!numbers)
+		return (NULL);
+	ft_check_args(numbers, 0);
+	ft_check_duplicates(numbers, 0);
+	stack_a = create_stack(numbers, 0);
+	free_split(numbers);
+	return (stack_a);
 }
 
-int    main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_stack_node    *stack_a;
-    t_stack_node    *stack_b;
-    t_bench            bench;
-    int                strategy;
-    int                start_index;
+	t_stack_node	*stack_a;
+	t_stack_node	*stack_b;
+	t_bench			bench;
+	int				strategy;
+	int				start_index;
 
-    if (argc < 2)
-        return (0);
-    stack_b = NULL;
-    start_index = ft_parse_flags(argv, &strategy, &bench);
-    if (argv[start_index] == NULL)
-        return (0);
-    stack_a = prepare_stack(argv, start_index);
-    if (!stack_a)
-        error_parseo();
-    get_rank(stack_a, stack_size(stack_a));
-    bench.disorder = calc_disorder(stack_a);
-    execute_sort(&stack_a, &stack_b, strategy, &bench);
-    bench_results(&bench);
+	if (argc < 2)
+		return (0);
+	stack_b = NULL;
+	start_index = ft_parse_flags(argv, &strategy, &bench);
+	if (argv[start_index] == NULL)
+		return (0);
+	stack_a = prepare_stack(argv, start_index);
+	if (!stack_a)
+		error_parseo();
+	get_rank(stack_a, stack_size(stack_a));
+	bench.disorder = calc_disorder(stack_a);
+	execute_sort(&stack_a, &stack_b, strategy, &bench);
+	bench_results(&bench);
 	free_stack(&stack_a);
-    return (free_stack(&stack_b), 0);
+	return (free_stack(&stack_b), 0);
 }
