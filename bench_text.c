@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:50:32 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/16 10:51:48 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 15:01:42 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void	bench_results(t_bench *bench)
 		return ;
 	bench_disorder(bench);
 	bench_strategy(bench);
-	item("total_operations", bench->total, "\n");
+	item("[bench] total_operations: ", bench->total, "\n");
 	bench_steps(bench);
 }
