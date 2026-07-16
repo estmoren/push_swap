@@ -44,7 +44,7 @@ Rebuild the project:
 make re
 ```
 
-### Execution
+### Instructions
 Run the executable by passing a list of integers as arguments:
 ```bash
 ./push_swap 2 1 3 6 5 8
@@ -65,18 +65,21 @@ We can choose which algorithm we want to test by using specific flags. We can us
 
 Example with --bench:
 
-[bench] disorder: 49.67%
-[bench] strategy: Adaptive -> Medium / O(n*sqrt(n))
-total_operations: 780
-[bench] sa: 0     sb: 0     ss: 0     pa: 100     pb: 100
-[bench] ra: 88     rb: 169     rr: 0     rra: 165     rrb: 158     rrr: 0
+-[bench] disorder: 49.67%
+-[bench] strategy: Adaptive -> Medium / O(n*sqrt(n))
+-[bench] total_operations: 780
+-[bench] sa: 0     sb: 0       ss: 0     pa: 100     pb: 100
+-[bench] ra: 88    rb: 169     rr: 0     rra: 165    rrb: 158     rrr: 0
 
 
 The flags will trigger these algorithms
 
 | `--simple` | Simple Sort |
+
 | `--medium` | Chunk Sort |
+
 | `--complex` | Radix Sort |
+
 | `--adaptive` | Adaptive Selection |
 
 If no flag is used, adaptive mode will be executed as a default one.
@@ -113,6 +116,7 @@ The following algorithms were selected and implemented. The decision was purely 
 * **Chunk-based sorting**
 * **Radix**
 * **Adaptive**
+
 | Disorder Index | Strategy | Complexity |
 |----------------|----------|------------|
 | < 0.20 | Simple Sort | O(n) / Near-sorted optimization |
