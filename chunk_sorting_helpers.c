@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk_sorting_helpers.c                               :+:      :+:    :+:   */
+/*   chunk_sorting_helpers.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 16:22:39 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/07 16:24:44 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 10:57:30 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int	get_last_match(t_stack_node *stack, int low, int high)
 	return (last_match);
 }
 
-void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos, t_bench *bench)
+void	rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos,
+		t_bench *bench)
 {
 	int	a_size;
 

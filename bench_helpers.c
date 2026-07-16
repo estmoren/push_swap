@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:48:35 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/09 15:28:09 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 11:07:23 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-
+static void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 void	ft_putnbr_fd(int n, int fd)
 {
 	long int	l;
@@ -64,7 +67,3 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(l % 10 + '0', fd);
 }
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}

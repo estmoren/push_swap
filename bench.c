@@ -6,11 +6,18 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:02:54 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/08 19:48:50 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 10:10:00 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	set_bench(t_bench *bench, char *strategy,
+		char *complexity)
+{
+	bench->strategy = strategy;
+	bench->complexity = complexity;
+}
 
 void	creating_bench(t_bench *bench, int enabled)
 {
