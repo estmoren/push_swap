@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 13:56:44 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/15 19:48:15 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:55:39 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ void	get_rank(t_stack_node *sa, int size)
 		{
 			if (temp->value > max_num && temp->rank == -1)
 			{
-				max_num = temp->value; //becomes the number
-				max_node = temp; //points to the number
+				max_num = temp->value;
+				max_node = temp;
 			}
 			temp = temp->next;
 		}

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:18:26 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/16 11:14:58 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:48:20 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack_node
 	int					value;
 	int					rank;
 	struct s_stack_node	*next;
-} 						t_stack_node;
+}						t_stack_node;
 
 typedef struct s_bench
 {
@@ -51,7 +51,7 @@ typedef struct s_bench
 
 /* adaptive */
 void			adaptive_sort(t_stack_node **a, t_stack_node **b, int strategy,
-				t_bench *bench);
+					t_bench *bench);
 void			set_bench(t_bench *bench, char *strategy, char *complexity);
 
 /* bench helpers */
@@ -87,16 +87,16 @@ int				ft_check_duplicates(char **argv, int start);
 int				get_first_match(t_stack_node *stack, int low, int high);
 int				get_last_match(t_stack_node *stack, int low, int high);
 void			rotate_to_top(t_stack_node **stack_a, int top_pos, int bot_pos,
-				t_bench *bench);
+					t_bench *bench);
 t_stack_node	*find_max_node(t_stack_node *stack);
 
 /* chunk sorting */
 void			sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b,
-				int strategy, t_bench *bench);
+					int strategy, t_bench *bench);
 
 /* complex_sort */
 void			complex_sort(t_stack_node **a, t_stack_node **b,
-				t_bench *bench);
+					t_bench *bench);
 
 /* create stack */
 int				stack_size(t_stack_node *st);

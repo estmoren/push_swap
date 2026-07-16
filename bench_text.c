@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 19:50:32 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/16 15:01:42 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:45:39 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	item(char *name, int value, char *sep)
 	ft_putnbr_fd(value, 2);
 	ft_putstr_fd(sep, 2);
 }
+
 static void	bench_steps(t_bench *bench)
 {
 	ft_putstr_fd("[bench] ", 2);
@@ -35,6 +36,7 @@ static void	bench_steps(t_bench *bench)
 	item("rrb", bench->rrb, "     ");
 	item("rrr", bench->rrr, "\n");
 }
+
 static void	bench_disorder(t_bench *bench)
 {
 	int	whole;

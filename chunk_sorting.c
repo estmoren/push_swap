@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/16 11:12:40 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:51:00 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ static int	get_chunk_size(int size, int strategy)
 	return (chunk);
 }
 
-static void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk,
-		t_bench *bench)
+static void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b,
+				int chunk, t_bench *bench)
 {
 	int	low;
 	int	high;
@@ -62,7 +62,7 @@ static void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int ch
 		rotate_to_top(stack_a, top, get_last_match(*stack_a, low, high), bench);
 		pb(stack_a, stack_b, bench);
 		pushed++;
-		if ( pushed == chunk)
+		if (pushed == chunk)
 		{
 			low += chunk;
 			high = low + (chunk - 1);
@@ -70,6 +70,7 @@ static void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int ch
 		}
 	}
 }
+
 static void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b,
 			t_bench *bench)
 {
@@ -92,6 +93,7 @@ static void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b,
 		pa(stack_a, stack_b, bench);
 	}
 }
+
 void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b,
 		int strategy, t_bench *bench)
 {
@@ -103,4 +105,3 @@ void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b,
 	push_chunks_b(stack_a, stack_b, chunk_size, bench);
 	push_back_a(stack_a, stack_b, bench);
 }
-

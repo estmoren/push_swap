@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 10:59:58 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/07 15:24:18 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:54:45 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_node_position(t_stack_node *stack, t_stack_node *target)
 {
-	int position;
+	int	position;
 
 	position = 0;
 	while (stack)

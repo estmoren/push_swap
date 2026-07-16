@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 10:26:16 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/15 20:42:02 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:58:53 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_three(t_stack_node **a, t_bench *bench)
 	while ((*a)->rank != 2)
 		ra(a, bench);
 	ra(a, bench);
-	if((*a)->rank == 1)
+	if ((*a)->rank == 1)
 		sa(a, bench);
 }
 
@@ -36,25 +36,24 @@ static void	sort_four(t_stack_node **a, t_stack_node **b, t_bench *bench)
 		else
 			ra(a, bench);
 	}
-
-	if((*a)->rank > (*a)->next->rank)
+	if ((*a)->rank > (*a)->next->rank)
 		sa(a, bench);
-	while(*b)
+	while (*b)
 	{
-		if((*b)->rank == 0)
+		if ((*b)->rank == 0)
 			rb(b, bench);
-		pa(a,b,bench);
+		pa(a, b, bench);
 	}
 }
 
 void	sort_five(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 2)
 	{
-		if((*a)->rank == 0 || (*a)->rank == 1)
+		if ((*a)->rank == 0 || (*a)->rank == 1)
 		{
 			pb(a, b, bench);
 			i++;
@@ -71,16 +70,16 @@ void	sort_five(t_stack_node **a, t_stack_node **b, t_bench *bench)
 	{
 		if ((*b)->rank == 0)
 			rb(b, bench);
-		pa(a,b, bench);
+		pa(a, b, bench);
 	}
 }
 
-void 	sort_short(t_stack_node **a, t_stack_node **b, t_bench *bench)
+void	sort_short(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	int	size;
 
 	size = stack_size(*a);
-	if ( size == 1)
+	if (size == 1)
 		return ;
 	else if (size == 2)
 	{

@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:57:34 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/13 22:29:01 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 16:47:00 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_reverse_rotate(t_stack_node **stack)
 void	rra(t_stack_node **a, t_bench *bench)
 {
 	ft_reverse_rotate(a);
-	counting_bench(bench, "rra"); //added
+	counting_bench(bench, "rra");
 	write(1, "rra\n", 4);
 }
 
@@ -46,6 +46,6 @@ void	rrr(t_stack_node **a, t_stack_node **b, t_bench *bench)
 {
 	ft_reverse_rotate(a);
 	ft_reverse_rotate(b);
-	counting_bench(bench, "rrr"); //added
+	counting_bench(bench, "rrr");
 	write(1, "rrr\n", 4);
 }
