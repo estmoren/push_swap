@@ -19,7 +19,8 @@ The result is an output of operations required to sort the input stack in an asc
 * **Flags**: Simple, Medium, Complex, Adaptive(uses disorder to choose the right strategy) and Benchmark mode (provides statistics)
 * **Performance Targets**: For 100 random numbers under 2000 operations (minimum requirement), for 500 random numbers use under 12 000 operations (minimum requirement)
 
-### Compilation
+### Instructions
+## Compilation
 To compile the project, run the following command in your terminal:
 ```bash
 make
@@ -111,11 +112,11 @@ Example: 8 9 7 6
 9 > 7 and 7 > 6 	= disorder (between 0.0 and 1.0)
 
 ## Algorithms implemented
-The following algorithms were selected and implemented. The decision was purely strategic, taking into consideration the time frame and availability of the programmers.
-* **Insertion sort adaptation**
-* **Chunk-based sorting**
-* **Radix**
-* **Adaptive**
+The following algorithms were agreed upon, selected and implemented. The decision was purely strategic, taking into consideration the time frame and availability of the programmers. Due to limitations of the students, the most straight forward option was chosen for each category.
+* **Selection sort adaptation** (estmoren)
+* **Chunk-based sorting** (lumacko)
+* **Radix** (estmoren)
+* **Adaptive** (lumacko)
 
 | Disorder Index | Strategy | Complexity |
 |----------------|----------|------------|
@@ -163,5 +164,6 @@ Both students participated in the creation of the project, testing and debugging
 ## Resources
 - Linux Man Pages
 - AI for guidance purposes and debugging
+- CS50 2026 youtube
 - 42 Documentation
 - peer advice
