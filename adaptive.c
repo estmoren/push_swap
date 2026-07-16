@@ -12,18 +12,14 @@
 
 #include "push_swap.h"
 
-static void	set_bench(t_bench *bench, char *strategy,
-		char *complexity)
-{
-	bench->strategy = strategy;
-	bench->complexity = complexity;
-}
-void	adaptive_sort(t_stack_node **a, t_stack_node **b, int strategy, t_bench *bench)
+void	adaptive_sort(t_stack_node **a, t_stack_node **b, int strategy,
+		t_bench *bench)
 {
 	double	ratio;
 
 	if (stack_size(*a) <= 5)
 	{
+		set_bench(bench, "Adaptive -> Simple", "O(1)");
 		sort_short(a, b, bench);
 		return ;
 	}

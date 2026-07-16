@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:56:56 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/15 19:12:21 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 11:11:58 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error(void)
 	exit(1);
 }
 
-int	ft_is_number(char	*str)
+static int	ft_is_number(char	*str)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ long	ft_atol(char *str)
 	return (nb * sign);
 }
 
-void	ft_check_args(char **argv, int start)
+int	ft_check_args(char **argv, int start)
 {
 	int		i;
 	long	nb;
@@ -72,15 +72,16 @@ void	ft_check_args(char **argv, int start)
 	while (argv[i] != NULL)
 	{
 		if (ft_is_number(argv[i]) == 0)
-			error();
+			return (1);
 		nb = ft_atol(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			error();
+			return (1);
 		i++;
 	}
+	return (0);
 }
 
-void	ft_check_duplicates(char **argv, int start)
+int	ft_check_duplicates(char **argv, int start)
 {
 	int	i;
 	int	j;
@@ -92,9 +93,10 @@ void	ft_check_duplicates(char **argv, int start)
 		while (argv[j] != NULL)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				error();
+				return (1);
 			j++;
 		}
 		i++;
 	}
+	return (0);
 }

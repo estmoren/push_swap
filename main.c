@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 00:00:00 by estmoren          #+#    #+#             */
-/*   Updated: 2026/07/15 19:17:06 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 10:52:16 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,20 @@ static void		execute_sort(t_stack_node **a, t_stack_node **b,
 	if (strategy == ADAPTIVE)
 		adaptive_sort(a, b, strategy, bench);
 	else if (strategy == COMPLEX)
+    {
+        set_bench(bench, "Complex", "O(n log n)");
 		complex_sort(a, b, bench);
-	else
-		sort_chunks(a, b, strategy, bench);
+    }
+	else if (strategy == SIMPLE)
+    {
+        set_bench(bench, "Simple", "O(n^2)");
+        sort_chunks(a, b, strategy, bench);
+    }
+    else
+    {
+        set_bench(bench, "Medium", "O(n*sqrt(n))");
+        sort_chunks(a, b, strategy, bench);
+    }
 }
 
 static t_stack_node		*prepare_stack(char **argv, int start)
@@ -51,8 +62,11 @@ static t_stack_node		*prepare_stack(char **argv, int start)
 	free(string);
 	if (!numbers)
 		return (NULL);
-	ft_check_args(numbers, 0);
-	ft_check_duplicates(numbers, 0);
+	if (ft_check_args(numbers,0) || ft_check_duplicates(numbers, 0))
+    {
+        free_split(numbers);
+        error();
+    }
 	stack_a = create_stack(numbers, 0);
 	free_split(numbers);
 	return (stack_a);

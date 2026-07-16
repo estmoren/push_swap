@@ -6,7 +6,7 @@
 /*   By: lumacko <lumacko@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:00:05 by lumacko           #+#    #+#             */
-/*   Updated: 2026/07/15 17:09:23 by lumacko          ###   ########.fr       */
+/*   Updated: 2026/07/16 11:12:40 by lumacko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static double	ft_sqrt(double n)
 	return (x);
 }
 
-int	get_chunk_size(int size, int strategy)
+static int	get_chunk_size(int size, int strategy)
 {
 	int	chunk;
 
@@ -45,7 +45,8 @@ int	get_chunk_size(int size, int strategy)
 	return (chunk);
 }
 
-void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk, t_bench *bench)
+static void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk,
+		t_bench *bench)
 {
 	int	low;
 	int	high;
@@ -69,7 +70,8 @@ void	push_chunks_b(t_stack_node **stack_a, t_stack_node **stack_b, int chunk, t_
 		}
 	}
 }
-static void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b, t_bench *bench)
+static void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b,
+			t_bench *bench)
 {
 	t_stack_node	*max_node;
 	int				position;
@@ -90,7 +92,8 @@ static void	push_back_a(t_stack_node **stack_a, t_stack_node **stack_b, t_bench 
 		pa(stack_a, stack_b, bench);
 	}
 }
-void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b, int strategy, t_bench *bench)
+void	sort_chunks(t_stack_node **stack_a, t_stack_node **stack_b,
+		int strategy, t_bench *bench)
 {
 	int	total_size;
 	int	chunk_size;
